@@ -11,7 +11,7 @@ import java.util.List;
 
 @Configuration
 @Slf4j
-public class RestTemplateConfig {
+public class LoggingRestTemplateConfig {
 
     @Bean
     public RestTemplate loggingRestTemplate() {
