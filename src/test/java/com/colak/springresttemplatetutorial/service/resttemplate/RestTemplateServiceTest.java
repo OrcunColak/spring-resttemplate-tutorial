@@ -45,22 +45,4 @@ class RestTemplateServiceTest {
         Assertions.assertEquals(expected, result);
     }
 
-    @Test
-    void postForEntity() {
-        String url = "http://localhost:" + randomPort + "/api/v1/quote/addquote";
-        QuoteRequestDto quoteRequestDto = new QuoteRequestDto("new quote");
-        ResponseEntity<String> responseEntity = restTemplateService.postForEntity(url, quoteRequestDto, String.class);
-        String result = responseEntity.getBody();
-        String expected = "Added new quote " + quoteRequestDto.quote();
-        Assertions.assertEquals(expected, result);
-    }
-
-    @Test
-    void postForObject() {
-        String url = "http://localhost:" + randomPort + "/api/v1/quote/addquote";
-        QuoteRequestDto quoteRequestDto = new QuoteRequestDto("new quote");
-        String result = restTemplateService.postForObject(url, quoteRequestDto, String.class);
-        String expected = "Added new quote " + quoteRequestDto.quote();
-        Assertions.assertEquals(expected, result);
-    }
 }

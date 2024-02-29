@@ -42,33 +42,6 @@ public class RestTemplateService {
                 });
     }
 
-    /**
-     * Example that demonstrates how to post using postForEntity()
-     */
-    public <T> ResponseEntity<T> postForEntity(String url, Object object, Class<T> responseType) {
-        RestTemplate restTemplate = new RestTemplate();
-        // The result is of String type
-        return restTemplate.postForEntity(url, object, responseType);
-    }
 
-    /**
-     * Example that demonstrates how to post using postForObject()
-     */
-    public <T> T postForObject(String url, Object object, Class<T> responseType) {
-        RestTemplate restTemplate = new RestTemplate();
-        HttpEntity<?> request = new HttpEntity<>(object);
-        // The result is of String type
-        return restTemplate.postForObject(url, request, responseType);
-    }
 
-    public <T> ResponseEntity<T> postWithExchange(String url, T object, Class<T> responseType) {
-        HttpHeaders header = new HttpHeaders();
-        header.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<T> requestEntity = new HttpEntity<>(object, header);
-
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.exchange(url, HttpMethod.POST, requestEntity, responseType);
-
-    }
 }
