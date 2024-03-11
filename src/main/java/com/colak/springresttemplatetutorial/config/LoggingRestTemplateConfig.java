@@ -22,7 +22,7 @@ public class LoggingRestTemplateConfig {
         return restTemplate;
     }
 
-    public static ClientHttpRequestInterceptor interceptor() {
+    private ClientHttpRequestInterceptor interceptor() {
         return (request, body, execution) -> {
             log.debug("SENDING REQUEST");
             log.debug("URI     ====> {}}", request.getURI());

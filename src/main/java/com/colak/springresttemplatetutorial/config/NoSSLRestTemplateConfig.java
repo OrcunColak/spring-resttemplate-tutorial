@@ -47,7 +47,7 @@ public class NoSSLRestTemplateConfig {
     }
 
     private TrustManager[] getTrustManagers() {
-        TrustManager[] trustManagers = new TrustManager[]{new X509TrustManager() {
+        return new TrustManager[]{new X509TrustManager() {
             // Method to check client's trust - accepting all certificates
             public void checkClientTrusted(X509Certificate[] x509Certificates, String s) {
             }
@@ -61,6 +61,5 @@ public class NoSSLRestTemplateConfig {
                 return new X509Certificate[0];
             }
         }};
-        return trustManagers;
     }
 }
