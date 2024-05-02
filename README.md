@@ -3,6 +3,11 @@
 The original idea is from  
 https://lejdiprifti.medium.com/log-http-requests-with-resttemplate-17c30495b12d
 
+# Timeout RestTemplate
+
+The original idea is from  
+https://dzone.com/articles/timeout-in-spring-boot-with-restclient-webclient-a
+
 # No SSL RestTemplate
 
 The original idea is from  
