@@ -11,27 +11,22 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RestTemplatePostService {
 
-    /**
-     * Example that demonstrates how to post using postForEntity()
-     */
+
+    // Example that demonstrates how to post using postForEntity()
     public <T> ResponseEntity<T> postForEntity(String url, Object body, Class<T> responseType) {
         RestTemplate restTemplate = new RestTemplate();
         // The result is of String type
         return restTemplate.postForEntity(url, body, responseType);
     }
 
-    /**
-     * Example that demonstrates how to post using postForObject()
-     */
+    // Example that demonstrates how to post using postForObject()
     public <T> T postForObject(String url, Object body, Class<T> responseType) {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<?> request = new HttpEntity<>(body);
         return restTemplate.postForObject(url, request, responseType);
     }
 
-    /**
-     * Example that demonstrates how to post using exchange()
-     */
+    // Example that demonstrates how to post using exchange()
     public <T> ResponseEntity<T> postWithExchange(String url, T body, Class<T> responseType) {
         HttpHeaders header = new HttpHeaders();
         header.setContentType(MediaType.APPLICATION_JSON);

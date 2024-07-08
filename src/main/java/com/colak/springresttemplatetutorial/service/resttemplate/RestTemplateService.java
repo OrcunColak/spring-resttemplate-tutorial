@@ -24,11 +24,6 @@ public class RestTemplateService {
         return restTemplate.exchange(url, HttpMethod.GET, requestEntity, responseType);
     }
 
-    public <T> T getForObject(String url, Class<T> responseType) {
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, responseType);
-    }
-
     /**
      * Example that demonstrates how to get a list using exchange()
      */

@@ -16,8 +16,6 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class RestTemplatePatchService {
 
-    private final RestTemplate restTemplate;
-
     public <T> T patchForObject(String url, Object body, Class<T> responseType) {
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<?> request = new HttpEntity<>(body);

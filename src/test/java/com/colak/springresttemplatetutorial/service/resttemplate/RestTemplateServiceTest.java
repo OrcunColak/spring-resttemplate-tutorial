@@ -1,6 +1,5 @@
 package com.colak.springresttemplatetutorial.service.resttemplate;
 
-import com.colak.springresttemplatetutorial.dto.QuoteRequestDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +19,6 @@ class RestTemplateServiceTest {
 
     @LocalServerPort
     int randomPort;
-
-    @Test
-    void getForObject() {
-        String url = "http://localhost:" + randomPort + "/api/v1/quote/getquote";
-        String page = restTemplateService.getForObject(url, String.class);
-        assertThat(page).isEqualTo("quote");
-    }
 
     @Test
     void getWithExchange() {

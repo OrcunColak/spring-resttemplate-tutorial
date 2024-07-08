@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +18,16 @@ import java.util.List;
 @RequestMapping("/api/v1/quote")
 public class QuoteController {
 
-    // http://localhost:8080/api/v1/quote/get
+    // http://localhost:8080/api/v1/quote/getquote
     @GetMapping("/getquote")
     public String getQuote() {
         return "quote";
+    }
+
+    // http://localhost:8080/api/v1/quote/getquote1/alo
+    @GetMapping("/getquote1/{quote}")
+    public String getQuote1(@PathVariable String quote) {
+        return quote;
     }
 
     // http://localhost:8080/api/v1/quote/getquotelist

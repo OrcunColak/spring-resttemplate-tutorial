@@ -14,7 +14,7 @@ public class TimeoutRestTemplateConfig {
     public RestTemplate timeoutRestTemplate() {
         var timeout = 5_000;
 
-        var clientHttpRequestFactory  = new HttpComponentsClientHttpRequestFactory();
+        HttpComponentsClientHttpRequestFactory clientHttpRequestFactory  = new HttpComponentsClientHttpRequestFactory();
         clientHttpRequestFactory.setConnectTimeout(timeout);
         clientHttpRequestFactory.setConnectionRequestTimeout(timeout);
 
