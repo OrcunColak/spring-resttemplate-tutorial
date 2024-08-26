@@ -31,7 +31,7 @@ public class IpRegionController {
                               String as) {
     }
 
-    // http://localhost:8080/api/v1/address/get?ip=52.220.113.16
+    // http://localhost:8080/api/v1/address/get?ip=217.131.106.60
     @GetMapping("/get")
     public CountryInfo getQuote1(@RequestParam String ip) {
         String url = "http://ip-api.com/json/" + ip;
